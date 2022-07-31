@@ -1,8 +1,11 @@
 import React from "react";
+import { Layout } from 'antd';
+
+const { Footer } = Layout;
 
 const FooterComponent = () => {
     return(
-        <footer id="footer">
+        <Footer id="footer">
             <div className="footer-widgets">
                 <div className="container">
                 <div className="row">
@@ -41,7 +44,7 @@ const FooterComponent = () => {
                 </div>
                 </div>
             </div>
-        </footer>
+        </Footer>
     )
 }
 export default React.memo(FooterComponent);

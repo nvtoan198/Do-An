@@ -1,36 +1,33 @@
 import React from "react";
+import logo from '../../logo.png';
+import { Layout } from 'antd';
+import { Link } from "react-router-dom";
+
+const { Header } = Layout;
 
 const HeaderComponent = () => {
     return(
-        <header id="header">
-            <div className="container">
-                <div className="row">
-                <div className="logo col col-md-3">
-                    <a href="#">
-                    <img src="assets/images/logo.png" alt="Electronics" />
-                    </a>
-                </div>
-                <div className="menu col col-md-9">
-                    <nav>
-                    <ul>
-                        <li>
-                        <a href="/">Home</a>
-                        </li>
-                        <li>
-                        <a href="/shop">Shop</a>
-                        </li>
-                        <li>
-                        <a href="/contact">Contact</a>
-                        </li>
-                        <li>
-                        <a href="/cart">Shopping Cart</a>
-                        </li>
-                    </ul>
-                    </nav>
-                </div>
-                </div>
-            </div>
-        </header>
+        <Header id="header" className="container">
+            <Link to="/" className="logo">
+                <img src={logo} alt="logo" />
+            </Link>
+            <nav className="menu">
+                <ul>
+                    <li>
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li>
+                        <Link to="/shop">Shop</Link>
+                    </li>
+                    <li>
+                        <Link to="/contact">Contact</Link>
+                    </li>
+                    <li>
+                        <Link to="/cart">Cart</Link>
+                    </li>
+                </ul>
+            </nav>
+        </Header>
     )
 }
 export default React.memo(HeaderComponent);
