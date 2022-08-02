@@ -76,7 +76,7 @@ a {
 .menu ul li:hover > a {
   color: #f03637;
 }
-button.btn {
+a.btn {
   background-color: #333333;
   font-size: 15px;
   font-weight: 600;
@@ -86,7 +86,7 @@ button.btn {
   line-height: 1;
   border-radius: 0;
 }
-button.btn:hover {
+a.btn:hover {
   background-color: #f03637;
   color: #ffffff;
 }
@@ -141,6 +141,7 @@ button.btn:hover {
   font-size: 40px;
   font-weight: 600;
   line-height: 1em;
+  margin-top: 0;
   margin-bottom: 37px;
   max-width: 260px;
 }
@@ -175,6 +176,8 @@ button.btn:hover {
 }
 .products .product .image-wrap {
   position: relative;
+  padding: 20px;
+  background-color: #eaeaea;
 }
 .products .product .image-wrap .btn-addtocart {
   position: absolute;
@@ -196,6 +199,10 @@ button.btn:hover {
 .products .product .image-wrap .btn-addtocart button:hover {
   background-color: #f03637;
   color: #ffffff;
+}
+.products .product .image-wrap img {
+  width: 270px;
+  height: 270px;
 }
 .products .product .content {
   padding: 20px 25px 25px;
@@ -233,12 +240,15 @@ img {
 }
 .col-md-3 {
   width: 25%;
+  padding: 0 15px;
 }
 .col-md-6 {
   width: 50%;
+  padding: 0 15px;
 }
 .col-md-12 {
   width: 100%;
+  padding: 0 15px;
 }
 #footer {
   background-image: url(../images/bg-footer-1.jpg);

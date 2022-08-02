@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import slider from "../../assets/images/slider1.jpg";
 
 export const Slider = () => {
@@ -14,7 +15,7 @@ export const Slider = () => {
               &amp; natural polish on our toys, making them absolutely
               child-safe
             </p>
-            <button className="btn">Shop Now</button>
+            <Link to="/shop" className="btn">Shop Now</Link>
           </div>
         </div>
       </section>

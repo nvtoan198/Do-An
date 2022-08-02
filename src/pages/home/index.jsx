@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import LayoutComponent from "../../components/Layout";
 import ProductContainer from "../../components/homes/ProductContainer";
+import banner1 from "../../assets/images/banner1.jpg";
+import banner2 from "../../assets/images/banner2.jpg";
 import { Banner } from "../../components/homes/Banner";
 import { Slider } from "../../components/homes/Silder";
 import { useDispatch, useSelector } from "react-redux";
@@ -18,12 +20,15 @@ export const HomePage = () => {
       <Slider />
       <div className="container">
         <section className="row banner">
-          <Banner />
-          <Banner />
+          <Banner item={banner1} desc="Limited Edition" title="Virtual Reality"/>
+          <Banner item={banner2} desc="collection ss21" title="Put The World On Mute"/>
         </section>
         {isLoading && <LoadingIndicator />}
         {products && (
           <ProductContainer title="Sales Products" products={products} />
+        )}
+        {products && (
+          <ProductContainer title="New Products" products={products} />
         )}
         {/*<ProductContainer title="New Products" />*/}
       </div>

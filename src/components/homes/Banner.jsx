@@ -1,15 +1,15 @@
 import React from "react";
-import banner1 from "../../assets/images/banner1.jpg";
+import { Link } from "react-router-dom";
 
-export const Banner = () => {
+export const Banner = (props) => {
   return (
     <div className="col-md-6">
       <div className="wraper">
-        <img src={banner1} alt="banner" />
+        <img src={props.item} alt="banner" />
         <div className="content">
-          <p>Limited Edition</p>
-          <h3>Virtual Reality</h3>
-          <button className="btn">Shop Now</button>
+          <p>{props.desc}</p>
+          <h3>{props.title}</h3>
+          <Link to="/shop" className="btn" >Shop Now</Link>
         </div>
       </div>
     </div>
