@@ -2,7 +2,7 @@ import { axiosClient } from "../ultils";
 
 const productApi = {
   fetchProducts() {
-    return axiosClient.get("");
+    return axiosClient.get("products/category/electronics");
   }
 };
 

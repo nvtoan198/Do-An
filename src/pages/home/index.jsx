@@ -3,13 +3,16 @@ import LayoutComponent from "../../components/Layout";
 import ProductContainer from "../../components/homes/ProductContainer";
 import { Banner } from "../../components/homes/Banner";
 import { Slider } from "../../components/homes/Silder";
-import { useSelector } from "react-redux";
-import { selectProducts } from "../../app/store/reducers";
+import { useDispatch, useSelector } from "react-redux";
+import { productActions, selectProducts } from "../../app/store/reducers";
+import { LoadingIndicator } from "../../components/common/LoadingIndicator";
 
-const HomePage = () => {
-  const { products } = useSelector(selectProducts);
-  console.log(products);
-  useEffect(() => {});
+export const HomePage = () => {
+  const { products, isLoading } = useSelector(selectProducts);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(productActions.fetchProducts());
+  }, []);
   return (
     <LayoutComponent notShowBreadcrum>
       <Slider />
@@ -18,8 +21,11 @@ const HomePage = () => {
           <Banner />
           <Banner />
         </section>
-        <ProductContainer title="Sales Products" />
-        <ProductContainer title="New Products" />
+        {isLoading && <LoadingIndicator />}
+        {products && (
+          <ProductContainer title="Sales Products" products={products} />
+        )}
+        {/*<ProductContainer title="New Products" />*/}
       </div>
     </LayoutComponent>
   );
