@@ -4,14 +4,14 @@ import ProductContainer from "../../components/homes/ProductContainer";
 import { Banner } from "../../components/homes/Banner";
 import { Slider } from "../../components/homes/Silder";
 import { useSelector } from "react-redux";
-import { selectProducts } from "../../app/store/reducers/index.js";
+import { selectProducts } from "../../app/store/reducers";
 
 const HomePage = () => {
   const { products } = useSelector(selectProducts);
   console.log(products);
   useEffect(() => {});
   return (
-    <LayoutComponent>
+    <LayoutComponent notShowBreadcrum>
       <Slider />
       <div className="container">
         <section className="row banner">

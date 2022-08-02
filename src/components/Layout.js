@@ -4,14 +4,14 @@ import FooterComponent from "./partials/Footer";
 import ContentComponent from "./partials/Content";
 
 const LayoutComponent = (props) => {
-    return (
-        <>
-            <HeaderComponent/>
-            <ContentComponent>
-                {props.children}
-            </ContentComponent>
-            <FooterComponent/>
-        </>
-    )
-}
+  return (
+    <>
+      <HeaderComponent />
+      <ContentComponent notShowBreadCrumb={props.notShowBreadcrum}>
+        {props.children}
+      </ContentComponent>
+      <FooterComponent />
+    </>
+  );
+};
 export default React.memo(LayoutComponent);
