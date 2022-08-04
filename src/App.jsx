@@ -1,5 +1,5 @@
 import "./App.css";
-import Router from "./routers";
+import Router from "./Routers";
 import "./assets/css/style.css";
 import store from "./app/store";
 import { Provider } from "react-redux";
